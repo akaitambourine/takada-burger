@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKADA BURGER | 岐阜の飛騨牛ハンドクラフトバーガー</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        .font-bebas { font-family: 'Bebas+Neue', sans-serif; }
+        body { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-orange-500 selection:text-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black tracking-tighter font-bebas text-orange-600">TAKADA BURGER</a>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+                <a href="index.html" class="hover:text-orange-600 transition-colors">Home</a>
+                <a href="menu.html" class="hover:text-orange-600 transition-colors">Menu</a>
+                <a href="about.html" class="hover:text-orange-600 transition-colors">About</a>
+            </div>
+            <div class="md:hidden" x-data="{ open: false }">
+                <button @click="open = !open" class="p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute top-full left-0 w-full bg-white border-b border-stone-200 p-6 flex flex-col space-y-4 shadow-xl">
+                    <a href="index.html" class="font-bold">Home</a>
+                    <a href="menu.html" class="font-bold">Menu</a>
+                    <a href="about.html" class="font-bold">About</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://placehold.jp/24/333333/ffffff/1920x1080.png?text=Hero+Burger" 
+                 data-ai-prompt="岐阜の街並みを背景にした、肉汁が滴る極厚の飛騨牛バーガー。とろけるチーズと新鮮なレタスが重なり、シズル感溢れる最高品質の実写写真。プロのライティング。"
+                 class="w-full h-full object-cover brightness-75">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-white">
+            <h1 class="text-6xl md:text-9xl font-black font-bebas leading-none mb-4 drop-shadow-2xl">
+                BITE INTO <br><span class="text-orange-500">GIFU'S BEST.</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-bold mb-8 max-w-xl drop-shadow-md">
+                店長 高田がこだわり抜いた、飛騨牛100%のハンドクラフトバーガー。岐阜の恵みを、その手の中に。
+            </p>
+            <a href="menu.html" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl">
+                MENUを見る <i data-lucide="arrow-right" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Feature Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-orange-600 font-bold tracking-[0.2em] uppercase text-sm">Craftsmanship</span>
+                    <h2 class="text-4xl md:text-5xl font-black mt-4 mb-6">妥協なき、高田の流儀。</h2>
+                    <p class="text-stone-600 leading-relaxed mb-8">
+                        岐阜で生まれ育った店長・高田が、「本当に旨いバーガーを地元で」という想いからスタートしたTAKADA BURGER。厳選された飛騨牛の赤身と脂身を独自の配合でミンチ。注文を受けてから鉄板で一気に焼き上げるスタイルは、肉本来の旨味を最大限に引き出します。
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="text-orange-600 flex-shrink-0"></i>
+                            <span class="font-bold">飛騨牛100%パティ</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="text-orange-600 flex-shrink-0"></i>
+                            <span class="font-bold">地元農家の新鮮野菜</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="text-orange-600 flex-shrink-0"></i>
+                            <span class="font-bold">特注天然酵母バンズ</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="text-orange-600 flex-shrink-0"></i>
+                            <span class="font-bold">自家製秘伝ソース</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.jp/24/cccccc/ffffff/800x800.png?text=Grilling" 
+                             data-ai-prompt="モダンなキッチンの鉄板の上で、分厚いハンバーグパティがジューシーに焼かれている様子。炎と煙が少し立ち上がり、躍動感のある調理風景。高品質な実写写真。"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 bg-orange-600 text-white p-8 rounded-2xl hidden md:block shadow-xl">
+                        <p class="text-4xl font-black font-bebas">100%</p>
+                        <p class="text-sm font-bold uppercase tracking-widest">Hida Beef</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-3xl font-black font-bebas text-white mb-4">TAKADA BURGER</h3>
+                    <p class="max-w-xs">岐阜県岐阜市某町1-2-3<br>火曜定休 | 11:00 - 20:00</p>
+                </div>
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Explore</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
+                            <li><a href="menu.html" class="hover:text-orange-500">Menu</a></li>
+                            <li><a href="about.html" class="hover:text-orange-500">About</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-orange-500">Instagram</a></li>
+                            <li><a href="#" class="hover:text-orange-500">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 text-center text-xs tracking-widest uppercase">
+                &copy; 2024 TAKADA BURGER. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
