@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | TAKADA BURGER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        .font-bebas { font-family: 'Bebas+Neue', sans-serif; }
+        body { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-orange-500 selection:text-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black tracking-tighter font-bebas text-orange-600">TAKADA BURGER</a>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+                <a href="index.html" class="hover:text-orange-600 transition-colors">Home</a>
+                <a href="menu.html" class="hover:text-orange-600 transition-colors">Menu</a>
+                <a href="about.html" class="text-orange-600 transition-colors">About</a>
+            </div>
+            <div class="md:hidden" x-data="{ open: false }">
+                <button @click="open = !open" class="p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute top-full left-0 w-full bg-white border-b border-stone-200 p-6 flex flex-col space-y-4 shadow-xl">
+                    <a href="index.html" class="font-bold">Home</a>
+                    <a href="menu.html" class="font-bold">Menu</a>
+                    <a href="about.html" class="font-bold text-orange-600">About</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-6xl md:text-8xl font-black font-bebas mb-12">THE STORY</h1>
+                
+                <div class="mb-16 rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                    <img src="https://placehold.jp/24/cccccc/ffffff/1200x800.png?text=Owner+Takada" 
+                         data-ai-prompt="落ち着いた雰囲気のバーガーショップのカウンターで、笑顔でゲストと話す、エプロン姿の清潔感のある男性店長（高田さん）。温かい照明と木を基調としたインテリア。高品質な実写写真。"
+                         class="w-full h-full object-cover">
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12 mb-20">
+                    <div class="md:col-span-2">
+                        <h2 class="text-3xl font-black mb-6 italic">「ハンバーガーは、究極の料理だ。」</h2>
+                        <div class="space-y-6 text-stone-600 leading-relaxed text-lg">
+                            <p>
+                                こんにちは、店長の高田です。私が岐阜でこの店を開いた理由は、いたってシンプルです。地元の最高の食材を使って、世界一旨いハンバーガーを岐阜の皆さんに食べて欲しかったからです。
+                            </p>
+                            <p>
+                                飛騨牛という日本が誇るブランド牛を、ステーキではなくハンバーガーとして贅沢に味わう。それは、一口で肉の甘み、野菜の食感、バンズの香りが一体となる魔法のような体験です。
+                            </p>
+                            <p>
+                                私たちが目指しているのは、単なるファストフードではありません。お客様の顔を見てから丁寧に焼き上げる「スローフードとしてのバーガー」です。岐阜の豊かな自然が育んだ恵みを、ぜひ五感で楽しんでください。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-orange-50 p-8 rounded-2xl h-fit">
+                        <h3 class="font-black text-xl mb-4">Store Info</h3>
+                        <dl class="space-y-4 text-sm">
+                            <div>
+                                <dt class="text-orange-600 font-bold uppercase tracking-tighter">Address</dt>
+                                <dd class="font-bold">岐阜県岐阜市某町1-2-3</dd>
+                            </div>
+                            <div>
+                                <dt class="text-orange-600 font-bold uppercase tracking-tighter">Access</dt>
+                                <dd class="font-bold">岐阜駅から徒歩10分</dd>
+                            </div>
+                            <div>
+                                <dt class="text-orange-600 font-bold uppercase tracking-tighter">Hours</dt>
+                                <dd class="font-bold">11:00 - 20:00 (L.O. 19:30)</dd>
+                            </div>
+                            <div>
+                                <dt class="text-orange-600 font-bold uppercase tracking-tighter">Closed</dt>
+                                <dd class="font-bold">毎週火曜日</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-3xl font-black font-bebas text-white mb-4">TAKADA BURGER</h3>
+                    <p class="max-w-xs">岐阜県岐阜市某町1-2-3<br>火曜定休 | 11:00 - 20:00</p>
+                </div>
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Explore</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
+                            <li><a href="menu.html" class="hover:text-orange-500">Menu</a></li>
+                            <li><a href="about.html" class="hover:text-orange-500">About</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-orange-500">Instagram</a></li>
+                            <li><a href="#" class="hover:text-orange-500">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 text-center text-xs tracking-widest uppercase">
+                &copy; 2024 TAKADA BURGER. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
