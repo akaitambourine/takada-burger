@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | TAKADA BURGER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        .font-bebas { font-family: 'Bebas+Neue', sans-serif; }
+        body { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-orange-500 selection:text-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-black tracking-tighter font-bebas text-orange-600">TAKADA BURGER</a>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+                <a href="index.html" class="hover:text-orange-600 transition-colors">Home</a>
+                <a href="menu.html" class="text-orange-600 transition-colors">Menu</a>
+                <a href="about.html" class="hover:text-orange-600 transition-colors">About</a>
+            </div>
+            <div class="md:hidden" x-data="{ open: false }">
+                <button @click="open = !open" class="p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute top-full left-0 w-full bg-white border-b border-stone-200 p-6 flex flex-col space-y-4 shadow-xl">
+                    <a href="index.html" class="font-bold">Home</a>
+                    <a href="menu.html" class="font-bold text-orange-600">Menu</a>
+                    <a href="about.html" class="font-bold">About</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <div class="container mx-auto px-6 text-center mb-16">
+            <h1 class="text-6xl md:text-8xl font-black font-bebas mb-4">OUR MENU</h1>
+            <p class="text-stone-500 font-bold tracking-widest uppercase text-sm">至福のひとときを、その一口に。</p>
+        </div>
+
+        <div class="container mx-auto px-6">
+            <!-- Burgers Section -->
+            <div class="mb-20">
+                <div class="flex items-center space-x-4 mb-10">
+                    <h2 class="text-3xl font-black font-bebas tracking-wider uppercase">Burgers</h2>
+                    <div class="h-px bg-stone-200 flex-grow"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Item 1 -->
+                    <div class="group">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-lg bg-stone-200">
+                            <img src="https://placehold.jp/24/cccccc/ffffff/600x450.png?text=Classic+Burger" 
+                                 data-ai-prompt="木製プレートに乗ったクラシックなチーズバーガー。飛騨牛のパティ、とろけるチェダーチーズ、レタス、トマトがきれいに層になっている。背景は温かみのあるカフェの内装。プロの料理写真。"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-black">TAKADA クラシック</h3>
+                            <span class="font-bebas text-xl text-orange-600">¥1,480</span>
+                        </div>
+                        <p class="text-stone-500 text-sm leading-relaxed">飛騨牛100%パティの旨味をダイレクトに感じる、当店不動の人気No.1メニュー。</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-lg bg-stone-200">
+                            <img src="https://placehold.jp/24/cccccc/ffffff/600x450.png?text=Bacon+Cheese" 
+                                 data-ai-prompt="カリカリに焼かれた厚切りベーコンがはみ出した、ボリューム満点のベーコンチーズバーガー。バーベキューソースが滴っている。シズル感のある実写写真。"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-black">燻製ベーコンチーズ</h3>
+                            <span class="font-bebas text-xl text-orange-600">¥1,680</span>
+                        </div>
+                        <p class="text-stone-500 text-sm leading-relaxed">地元の工房で燻製された厚切りベーコンと、濃厚なチーズの完璧なコンビネーション。</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="group">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-lg bg-stone-200">
+                            <img src="https://placehold.jp/24/cccccc/ffffff/600x450.png?text=Avocado+Burger" 
+                                 data-ai-prompt="新鮮なアボカドが贅沢にスライスされて入っているハンバーガー。ヘルシーで彩り豊かな断面。プロの料理写真。"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-black">アボカド・リッチ</h3>
+                            <span class="font-bebas text-xl text-orange-600">¥1,580</span>
+                        </div>
+                        <p class="text-stone-500 text-sm leading-relaxed">完熟アボカドを半玉使用。わさび醤油ベースの特製ソースで和のアクセントを。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides & Drinks -->
+            <div class="grid md:grid-cols-2 gap-20">
+                <div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <h2 class="text-2xl font-black font-bebas tracking-wider uppercase">Sides</h2>
+                        <div class="h-px bg-stone-200 flex-grow"></div>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between border-b border-stone-100 pb-4">
+                            <div>
+                                <p class="font-bold">トリュフ塩のポテトフライ</p>
+                                <p class="text-xs text-stone-500">香り高いトリュフソルトで仕上げた贅沢ポテト</p>
+                            </div>
+                            <span class="font-bebas text-orange-600">¥550</span>
+                        </li>
+                        <li class="flex justify-between border-b border-stone-100 pb-4">
+                            <div>
+                                <p class="font-bold">高田家の自家製ピクルス</p>
+                                <p class="text-xs text-stone-500">地元野菜を特製ビネガーで漬け込みました</p>
+                            </div>
+                            <span class="font-bebas text-orange-600">¥400</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <h2 class="text-2xl font-black font-bebas tracking-wider uppercase">Drinks</h2>
+                        <div class="h-px bg-stone-200 flex-grow"></div>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between border-b border-stone-100 pb-4">
+                            <div>
+                                <p class="font-bold">自家製クラフトコーラ</p>
+                                <p class="text-xs text-stone-500">スパイスから煮出したオリジナルの味</p>
+                            </div>
+                            <span class="font-bebas text-orange-600">¥600</span>
+                        </li>
+                        <li class="flex justify-between border-b border-stone-100 pb-4">
+                            <div>
+                                <p class="font-bold">岐阜の地ビール</p>
+                                <p class="text-xs text-stone-500">バーガーに合うIPAを厳選しました</p>
+                            </div>
+                            <span class="font-bebas text-orange-600">¥850</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-3xl font-black font-bebas text-white mb-4">TAKADA BURGER</h3>
+                    <p class="max-w-xs">岐阜県岐阜市某町1-2-3<br>火曜定休 | 11:00 - 20:00</p>
+                </div>
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Explore</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
+                            <li><a href="menu.html" class="hover:text-orange-500">Menu</a></li>
+                            <li><a href="about.html" class="hover:text-orange-500">About</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-orange-500">Instagram</a></li>
+                            <li><a href="#" class="hover:text-orange-500">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 text-center text-xs tracking-widest uppercase">
+                &copy; 2024 TAKADA BURGER. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
